@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/Access.css">
+</head>
+<body>
+    <div class="container1">
+        <strong style="color:red; font-size:20px;background-color:darkgrey">{{text}}</strong>
+        <h2 style="font-size: 35px; text-align: center">Enter ID to Delete</h2>
+        <form action="/DataDeletion" id="entform" method="post">
+          {% csrf_token %}
+          <label for="id"><b>ID</b></label>
+          <input type="number" id="id" class="cmn" name="Id" /><br /><br />
+          <button type="submit" id="btn1">Delete</button>
+          <button type="submit" id="btn2" formaction="/home">Back</button>
+          <textarea name=""  cols="50" rows="3">Emp_name  -  {{DATA}} {{Text}}
+        </textarea>
+        </form>
+        </div>
+</body>
+</html>

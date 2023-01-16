@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/Entry.css" />
+  </head>
+  <body>
+    <div>
+      {% if messages %}
+      {% for message in messages %}
+      <div
+        style="
+          margin: -7px;
+          padding: 10px;
+          width: 100%;
+          height: 30px;
+          background-color: rgba(246, 187, 115, 0.733);
+          font-size: 25px;
+          color:rgba(180, 40, 40, 0.995);
+          text-align:center;
+        " 
+      >
+        <strong>{{ message }}</strong>
+        <span class="closebtn" aria-hidden="True">&times;</span>
+      </div>
+      {% endfor %}
+      {% endif %}
+      <div class="container1">
+        <h2 style="font-size: 35px; text-align: center">Fill the below data</h2>
+        <form action="/DataEntry" id="entform" method="post">
+          {% csrf_token %}
+          <label for="id"><b>ID</b></label>
+          <input type="number" id="id" class="cmn" name="Id" /><br /><br />
+          <label for="name"><b>Name</b></label>
+          <input type="text" id="name" class="cmn" name="name" /><br /><br />
+          <label for="desig"><b>Designation</b></label>
+          <input type="text" id="desig" class="cmn" name="desig" /><br /><br />
+          <label for="depart"><b>Department</b></label>
+          <input
+            type="text"
+            id="depart"
+            class="cmn"
+            name="depart"
+          /><br /><br />
+          <label for="doj"><b>DOJ</b></label>
+          <input type="date" id="doj" class="cmn" name="doj" /><br /><br />
+          <label for="contact"><b>Contact</b></label>
+          <input
+            type="number"
+            id="contact"
+            class="cmn"
+            name="contact"
+          /><br /><br />
+          <button type="submit" id="btn1">Submit</button>
+          <button type="submit" id="btn2" formaction="/home">Back</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

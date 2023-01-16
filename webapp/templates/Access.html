@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/Access.css">
+</head>
+<body>
+    <div class="container1">
+        <strong style="color:red; font-size:20px;background-color:darkgrey">{{text}}</strong>
+        <h2 style="font-size: 35px; text-align: center">Enter ID to Access</h2>
+        <form action="/DataAccess" id="entform" method="post">
+          {% csrf_token %}
+          <label for="id"><b>ID</b></label>
+          <input type="number" id="id" class="cmn" name="Id" /><br /><br />
+          <button type="submit" id="btn1">Access</button>
+          <button type="submit" id="btn2" formaction="/home">Back</button>
+          <textarea name=""  cols="50" rows="6">Emp id      - {{DATA.Emp_id}} 
+Emp name    - {{DATA.Emp_name}}
+Designation - {{DATA.designation}}
+Department  - {{DATA.department}} 
+DOJ         - {{DATA.doj}} 
+Contact     - {{DATA.contact}}
+        </textarea>
+        </form>
+        </div>
+</body>
+</html>

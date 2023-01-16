@@ -1,0 +1,10 @@
+body {
+    font-size: 1em;
+    color: rgb(90, 50, 150);
+    background: rgb(243, 206, 138);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
